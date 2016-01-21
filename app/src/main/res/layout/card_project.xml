@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:background="@drawable/card_background_selectable" >
+
+    <TextView
+        android:id="@+id/projectName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Project Name"
+        android:textColor="#222"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:text="Start:"
+        android:layout_below="@id/projectName" />
+
+    <TextView
+        android:id="@+id/endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="End:"
+        android:layout_below="@id/startDate" />
+
+    <ImageView
+        android:id="@+id/editButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="6dp"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:id="@+id/expandButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/editButton" />
+
+    <TextView
+        android:id="@+id/quickNotesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_below="@id/endDate"
+        android:text="Quick Notes"
+        android:textColor="#222"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quickNotesTitle"
+        android:maxLines="7" />
+
+</RelativeLayout>
