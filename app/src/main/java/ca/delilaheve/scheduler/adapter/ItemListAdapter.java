@@ -1,6 +1,7 @@
 package ca.delilaheve.scheduler.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import ca.delilaheve.scheduler.R;
+import ca.delilaheve.scheduler.TaskActivity;
 import ca.delilaheve.scheduler.data.Task;
+import ca.delilaheve.scheduler.util.Keys;
 
 public class ItemListAdapter extends BaseAdapter {
 
@@ -40,6 +43,19 @@ public class ItemListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // edit task
+                Intent i = new Intent(context, TaskActivity.class);
+                i.putExtra(Keys.VIEW_MODE, Keys.EDIT);
+                context.startActivity(i);
+            }
+        });
+
+        // set card click event
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, TaskActivity.class);
+                i.putExtra(Keys.VIEW_MODE, Keys.VIEW);
+                context.startActivity(i);
             }
         });
 
@@ -48,16 +64,16 @@ public class ItemListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return tasks.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return tasks.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 }
